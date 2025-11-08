@@ -26,7 +26,7 @@ RestAssuredJava/
 ---
 ## 🧪 Tech Stack
 
-Java 17+ (o la versión que uses en pom.xml)
+Java 17+ (pom.xml)
 
 Maven
 
