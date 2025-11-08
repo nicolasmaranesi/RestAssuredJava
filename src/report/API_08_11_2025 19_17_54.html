@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='uft-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Automation Report</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Nov 8, 2025 07:17:54 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Test GET all products</span>
+						<span class='test-time'>Nov 8, 2025 07:17:55 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 8, 2025 07:17:55 PM</span>
+	<span class='label end-time'>Nov 8, 2025 07:17:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+545ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:55 PM</td>
+				<td class='step-details'>
+						Building get all products Request. Endpoint: https://fakestoreapi.com/products
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						URL:  https://fakestoreapi.com/products/
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						Request Method: null
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						Request Headers:
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						Request Params: {}
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						Request Body: null
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:56 PM</td>
+				<td class='step-details'>
+						Sending get all products Request...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:58 PM</td>
+				<td class='step-details'>
+						Received Register Response
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:58 PM</td>
+				<td class='step-details'>
+						Response Headers: Date=Sat, 08 Nov 2025 22:17:58 GMT
+Content-Type=application/json; charset=utf-8
+Transfer-Encoding=chunked
+Connection=keep-alive
+access-control-allow-origin=*
+etag=W/"2990-lZ2o94A2EDKiYW3/6/3oI74HHkw"
+x-powered-by=Express
+cf-cache-status=DYNAMIC
+Nel={"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Report-To={"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=n1JAZLlRAsGkndJKvZRFkjgThqEZx%2BGiw4gEQOzhD5R1qGv1Fj98ceu5ASpkKNcyAd8Rbwg69ae%2F3zGAGDDlEXrgcJomnagPZfZBeqrk4lo%3D"}]}
+Content-Encoding=gzip
+Server=cloudflare
+CF-RAY=99b871873980d22c-EZE
+alt-svc=h3=":443"; ma=86400
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>7:17:58 PM</td>
+				<td class='step-details'>
+						<pre>Response Body: [
+&nbsp;{
+&nbsp;&nbsp;"id": 1,
+&nbsp;&nbsp;"title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+&nbsp;&nbsp;"price": 109.95,
+&nbsp;&nbsp;"description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+&nbsp;&nbsp;"category": "men's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3.9,
+&nbsp;&nbsp;&nbsp;"count": 120
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 2,
+&nbsp;&nbsp;"title": "Mens Casual Premium Slim Fit T-Shirts ",
+&nbsp;&nbsp;"price": 22.3,
+&nbsp;&nbsp;"description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+&nbsp;&nbsp;"category": "men's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.1,
+&nbsp;&nbsp;&nbsp;"count": 259
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 3,
+&nbsp;&nbsp;"title": "Mens Cotton Jacket",
+&nbsp;&nbsp;"price": 55.99,
+&nbsp;&nbsp;"description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+&nbsp;&nbsp;"category": "men's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.7,
+&nbsp;&nbsp;&nbsp;"count": 500
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 4,
+&nbsp;&nbsp;"title": "Mens Casual Slim Fit",
+&nbsp;&nbsp;"price": 15.99,
+&nbsp;&nbsp;"description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+&nbsp;&nbsp;"category": "men's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.1,
+&nbsp;&nbsp;&nbsp;"count": 430
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 5,
+&nbsp;&nbsp;"title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+&nbsp;&nbsp;"price": 695,
+&nbsp;&nbsp;"description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+&nbsp;&nbsp;"category": "jewelery",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.6,
+&nbsp;&nbsp;&nbsp;"count": 400
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 6,
+&nbsp;&nbsp;"title": "Solid Gold Petite Micropave ",
+&nbsp;&nbsp;"price": 168,
+&nbsp;&nbsp;"description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+&nbsp;&nbsp;"category": "jewelery",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3.9,
+&nbsp;&nbsp;&nbsp;"count": 70
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 7,
+&nbsp;&nbsp;"title": "White Gold Plated Princess",
+&nbsp;&nbsp;"price": 9.99,
+&nbsp;&nbsp;"description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+&nbsp;&nbsp;"category": "jewelery",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3,
+&nbsp;&nbsp;&nbsp;"count": 400
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 8,
+&nbsp;&nbsp;"title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+&nbsp;&nbsp;"price": 10.99,
+&nbsp;&nbsp;"description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+&nbsp;&nbsp;"category": "jewelery",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 1.9,
+&nbsp;&nbsp;&nbsp;"count": 100
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 9,
+&nbsp;&nbsp;"title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+&nbsp;&nbsp;"price": 64,
+&nbsp;&nbsp;"description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3.3,
+&nbsp;&nbsp;&nbsp;"count": 203
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 10,
+&nbsp;&nbsp;"title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+&nbsp;&nbsp;"price": 109,
+&nbsp;&nbsp;"description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.9,
+&nbsp;&nbsp;&nbsp;"count": 470
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 11,
+&nbsp;&nbsp;"title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+&nbsp;&nbsp;"price": 109,
+&nbsp;&nbsp;"description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.8,
+&nbsp;&nbsp;&nbsp;"count": 319
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 12,
+&nbsp;&nbsp;"title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+&nbsp;&nbsp;"price": 114,
+&nbsp;&nbsp;"description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.8,
+&nbsp;&nbsp;&nbsp;"count": 400
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 13,
+&nbsp;&nbsp;"title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+&nbsp;&nbsp;"price": 599,
+&nbsp;&nbsp;"description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.9,
+&nbsp;&nbsp;&nbsp;"count": 250
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 14,
+&nbsp;&nbsp;"title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+&nbsp;&nbsp;"price": 999.99,
+&nbsp;&nbsp;"description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+&nbsp;&nbsp;"category": "electronics",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.2,
+&nbsp;&nbsp;&nbsp;"count": 140
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 15,
+&nbsp;&nbsp;"title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+&nbsp;&nbsp;"price": 56.99,
+&nbsp;&nbsp;"description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.6,
+&nbsp;&nbsp;&nbsp;"count": 235
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 16,
+&nbsp;&nbsp;"title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+&nbsp;&nbsp;"price": 29.95,
+&nbsp;&nbsp;"description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 2.9,
+&nbsp;&nbsp;&nbsp;"count": 340
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 17,
+&nbsp;&nbsp;"title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+&nbsp;&nbsp;"price": 39.99,
+&nbsp;&nbsp;"description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3.8,
+&nbsp;&nbsp;&nbsp;"count": 679
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 18,
+&nbsp;&nbsp;"title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+&nbsp;&nbsp;"price": 9.85,
+&nbsp;&nbsp;"description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.7,
+&nbsp;&nbsp;&nbsp;"count": 130
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 19,
+&nbsp;&nbsp;"title": "Opna Women's Short Sleeve Moisture",
+&nbsp;&nbsp;"price": 7.95,
+&nbsp;&nbsp;"description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 4.5,
+&nbsp;&nbsp;&nbsp;"count": 146
+&nbsp;&nbsp;}
+&nbsp;},
+&nbsp;{
+&nbsp;&nbsp;"id": 20,
+&nbsp;&nbsp;"title": "DANVOUY Womens T Shirt Casual Cotton Short",
+&nbsp;&nbsp;"price": 12.99,
+&nbsp;&nbsp;"description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+&nbsp;&nbsp;"category": "women's clothing",
+&nbsp;&nbsp;"image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+&nbsp;&nbsp;"rating": {
+&nbsp;&nbsp;&nbsp;"rate": 3.6,
+&nbsp;&nbsp;&nbsp;"count": 145
+&nbsp;&nbsp;}
+&nbsp;}
+]</pre>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>7:17:59 PM</td>
+				<td class='step-details'>
+						The Test getAllProducts passed.
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Nov 8, 2025 07:17:54 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Nov 8, 2025 07:17:59 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 4s+748ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Automation Tester</td>
+								<td>Nicolas Maranesi</td>
+							</tr>
+							<tr>
+								<td>organization</td>
+								<td>Claro Pgs</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 1,
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Test GET all products":3.545
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>
